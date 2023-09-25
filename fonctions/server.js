@@ -14,9 +14,9 @@ app.use((req, res, next) => {
 });
 // app.use(express.urlencoded({ extended: true }));
 
-const db = require("./app/models");
+const db = require("../app/models");
 db.sequelize.sync();
-require("./app/routes/turorial.routes")(app);
+require("../app/routes/turorial.routes")(app);
 module.exports.handler = serverless(app);
 
 const PORT = process.env.PORT || 8090;
