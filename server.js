@@ -1,4 +1,5 @@
 const express = require("express");
+const serverless = require('serverless-http');
 const cors = require("cors");
 const app = express();
 // var corsOptions = {
@@ -16,6 +17,7 @@ app.use((req, res, next) => {
 const db = require("./app/models");
 db.sequelize.sync();
 require("./app/routes/turorial.routes")(app);
+module.exports.handler = serverless(app);
 
 const PORT = process.env.PORT || 8090;
 app.listen(PORT, () => {
