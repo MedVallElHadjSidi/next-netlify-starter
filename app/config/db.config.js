@@ -9,6 +9,7 @@ module.exports = {
         max: process.env.DB_POOL_MAX || 5,
         min: process.env.DB_POOL_MIN || 0,
         acquire: process.env.DB_POOL_ACQUIRE || 30000,
-        idle: process.env.DB_POOL_IDLE || 10000
+        idle: process.env.DB_POOL_IDLE || 10000,
+        
     }
   };
